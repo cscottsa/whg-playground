@@ -107,12 +107,13 @@ const config = {
 };
 
 if (minify) {
-  config.optimization.minimizer = [
-    new UglifyJsPlugin({
-      cache: true,
-      parallel: true,
-    }),
-  ];
+  config.optimization = {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  };
+
+  config.optimization.minimize;
 }
 
 module.exports = config;
